@@ -1,0 +1,48 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5 
+        .row 
+            .col-md-12
+                h2.d-block.w-100.text-center Subir Archivos
+                
+            .row.justify-content-center.col
+                .col-md-8 
+                    form(action = "/uploadHbt" method="POST" id="uploadForm", enctype="multipart/form-data")
+                        .form-group
+                        label() SUBE UNA IMAGEN A LA VEZ
+                        input#myFiles(type="file",name="myFiles" accept="image/*", multiple)
+                        br
+                        input.btn.btn-success.btn-block(type="submit")
+                    
+            h3 
+            h2
+            script(type='text/javascript').
+                console.log("holi") 
+                const form = document.getElementById('uploadForm')
+                const sendFiles = async () => {
+                    // Object 
+                    const myFiles = document.getElementById('myFiles').files
+                    const id_hbt  = document.getElementById('id_hbt')
+                    const formData = new FormData()
+                    Object.keys(myFiles).forEach(key => {
+                        formData.append(myFiles.item(key).name, myFiles.item(key))
+                        console.log(myFiles[key].name)
+                    })
+
+                    const response = await fetch('http://localhost:1900/uploadHbt', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    const json = await response.json()
+                    const h2 = document.querySelector('h2')
+                    h2.textContent = `Status: ${json?.status}`
+                    const h3 = document.querySelector('h3')
+                    h3.textContent = json?.message
+                    console.log(json)
+                    
+                }
+                form.addEventListener('submit', (e) => {
+                        console.log("Evento Nuevo")
+                        e.preventDefault()
+                        sendFiles()                       
+                })

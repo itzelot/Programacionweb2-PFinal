@@ -1,0 +1,34 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5 
+        .row 
+            .col-md-12 
+                h2.d.block.w-100.text-center AGREGAR HABITACIONES 
+                if (errores) 
+                    each error in errores 
+                        .alert.col.alert-danger.text-center=error.mensaje 
+
+            .row.justify-content-center.col 
+                .col-md-8 
+                    form(action = "/habitaciones" method="POST")
+                        .form-group 
+                            label(for="id_hbt") id 
+                            input#correo(type="test",placeholder="identificador",name="id_hbt",class="form-control",value=id_hbt,readonly="readonly")
+                        .form-group 
+                            label(for="piso") Piso 
+                            input#piso(type="number",placeholder="Piso",name="piso",class="form-control",value=piso)
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(oninput='this.value = this.value.toUpperCase()',type="text",placeholder="Nombre",name="nombre",class="form-control",value=nombre)
+                        .form-group 
+                            label(for="refrigerador") Refrigerador 
+                                select#refrigerador(type="checkbox",name="refrigerador", class="form-control",value=refrigerador)
+                                    option() 0
+                                    option() 1
+                        .form-group 
+                            label(form="id_htl") Hotel
+                                select#id_htl(type="textbox",name="id_htl",class="form-control",value=id_htl)
+                                    each htl in hot
+                                        option(value=htl.id_htl) #{htl.id_htl}. #{htl.nombre}
+                        input.btn.btn-success.btn-block(type="submit")
+                        br

@@ -1,0 +1,41 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5
+        section
+        blockquote 
+        h2.d.block.w-100.text-center.justify-content-center.col GERENTES REGISTRADOS    
+            br 
+            br
+            a(href=`/gerentes`, class='btn btn-warning', style='margin-right:0') +Agregar Gerente 
+            section.justify-content-center.col
+                .row(style='margin-left:5rem')
+                    .col-md.col-lg-4.mv-4
+                        br
+                        table.table.table-light
+                            thead.table-dark
+                                tr 
+                                    th #
+                                    section    
+                                        th 
+                                            .th Nombre
+                                    th Ap.Paterno
+                                    th Ap.Materno 
+                                    th Telefono
+                                    th Hotel
+                                    th Modificar
+                                    th Eliminar
+                            tbody
+                                each gerentes in gerente
+                                    tr     
+                                        td #{gerentes.id_grt}
+                                        td #{gerentes.nombre} 
+                                        td #{gerentes.ap_paterno}
+                                        td #{gerentes.ap_materno}
+                                        td #{gerentes.telefono}
+                                        td #{gerentes.hotele.nombre}
+                                        td 
+                                            a(href=`/modificarGerentes?id=${gerentes.id_grt}`, class='btn btn-success btn-clock', width="1rem")
+                                                i.fa.fa-pencil-square-o 
+                                        td
+                                            a(href=`/eliminarGerentes?id=${gerentes.id_grt}`, class='btn btn-danger btn-clock')
+                                                i.fa.fa-trash

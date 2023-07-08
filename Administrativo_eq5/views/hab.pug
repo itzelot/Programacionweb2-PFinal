@@ -1,0 +1,37 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5
+        br 
+        br
+        section 
+            blockquote 
+            h2.d.block.w-100.text-center(style='font-weight: bolder; font-size:2.2rem') HABITACIONES REGISTRADAS  
+
+            each htl in hot
+                h2.d.block.w-100.text-center(style='font-weight: bolder') #{htl.nombre}
+                br 
+            a(href=`/listaHoteles`, class='btn btn-warning') Regresar
+            .row(style='margin-left:15rem')
+                .col-md.col-lg-4.mv-4
+                    table.table.table-light
+                        thead.table-dark
+                            tr.hover-red 
+                                th #
+                                th Piso
+                                th Habitacion   
+                                th Refrigerador
+                                th 
+                                th
+                        tbody
+                            each htl in habitacion
+                                tr                   
+                                    td #{htl.id_hbt}
+                                    td #{htl.piso}
+                                    td #{htl.nombre}
+                                    td #{htl.refrigerador}
+                                    td 
+                                        a(href=`/modificarHabitaciones?id=${htl.id_hbt}`, class='btn btn-success btn-clock')
+                                            i.fa.fa-pencil-square-o
+                                    td
+                                        a(href=`/eliminarHabitaciones?id=${htl.id_hbt}`, class='btn btn-danger btn-clock')
+                                            i.fa.fa-trash

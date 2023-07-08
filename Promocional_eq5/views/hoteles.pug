@@ -1,0 +1,19 @@
+extends ./layout/index.pug 
+block compartircontenido
+    main.container.mt-5
+        section 
+        blockquote 
+        h2.d.block.w-100.text-center(style="font-size:2rem; font-weight:bold") ALOJAMIENTO EN LOS MEJORES HOTELES    
+            br 
+            .row 
+                each hoteles in hotel3
+                    .col-md.col-lg-4.mv-4 
+                        br
+                        .card
+                            .card-body.text-center
+                                h4.card-text(style="font-size:1.5rem; font-weight:bold") #{hoteles.nombre}
+                                a(href=`/habitaciones?id=${hoteles.id_htl}`, class='btn btn-info btn-clock') Habitaciones
+                            .card-body.text-left
+                                h4.card-title(style='font-size:1rem') DIRECCION: #{hoteles.direccion}
+                                h4.card-title(style='font-size:1rem') TELEFONO: #{hoteles.telefono}
+                                h4.card-title(style='font-size:1rem') CORREO: #{hoteles.correo}

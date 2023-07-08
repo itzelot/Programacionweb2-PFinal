@@ -1,0 +1,16 @@
+extends ./layout/indexlogin.pug 
+block compartircontenido
+    main.container.mt-5 
+            .row 
+                .col-md-12
+                    h2.d-block.w-100.text-center Credenciales
+                .row.justify-content-center.col
+                    .col-md-8 
+                        form(action = "/credenciales" method="POST")
+                            .mb-3
+                                label.form-label(for='usuario') Usuario
+                                input#usuario.form-control(type='test' placeholder='Tu usuario',name="usuario")
+                            .mb-3
+                                label.form-label(for='clave') Clave
+                                input#clave.form-control(type='password' placeholder='Tu usuario',name="clave")
+                            button.btn.btn-primary(type='submit') Sign in

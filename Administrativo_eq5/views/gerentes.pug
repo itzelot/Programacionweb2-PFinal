@@ -1,0 +1,38 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5
+        .row 
+            .col-md-12 
+                h2.d.block.w-100.text-center AGREGAR GERENTE 
+                if (errores) 
+                    each error in errores 
+                        .alert.col.alert-danger.text-center=error.mensaje 
+
+            .row.justify-content-center.col 
+                .col-md-8 
+                    form(action = "/gerentes" method="POST")
+                        .form-group 
+                            label(for="id_grt") id Gerente
+                            input#id_grt(type="test",placeholder="identificador",name="id_grt",class="form-control",value=id_grt,readonly="readonly")
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(oninput='this.value = this.value.toUpperCase()',type="text",placeholder="Nombre del Gerente",name="nombre",class="form-control",value=nombre)
+                        .form-group 
+                            label(for="ap_paterno") Apellido Paterno 
+                            input#ap_paterno(oninput='this.value = this.value.toUpperCase()',type="text",placeholder="Apelido Paterno",name="ap_paterno",class="form-control",value=ap_paterno)  
+                        .form-group 
+                            label(for="ap_materno") Apellido Materno 
+                            input#ap_materno(oninput='this.value = this.value.toUpperCase()',type="text",placeholder="Apellido Materno",name="ap_materno",class="form-control",value=ap_materno)
+                        .form-group 
+                            label(for="telefono") Telefono 
+                            input#telefono(type="number",placeholder="Telefono del Gerente",name="telefono",class="form-control", maxlength="10",value=telefono)
+                        .form-group 
+                            label(form="id_htl") Hotel
+                                select#id_htl(type="textbox",name="id_htl",class="form-control",value=id_htl)
+                                    each htl in h
+                                        option(value=htl.id_htl) #{htl.id_htl}. #{htl.nombre}                           
+                            a(href='/hoteles', class='btn btn-success btn-clock') Agregar hotel
+                        input.btn.btn-success.btn-block(type="submit")
+                        br
+                        .row.justify-content-center
+                            a(href='/listaGerentes', class='btn btn-info btn-clock',style='font-size:1.5rem') Gerentes registrados

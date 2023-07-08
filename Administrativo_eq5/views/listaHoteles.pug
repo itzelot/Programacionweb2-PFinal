@@ -1,0 +1,42 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-1
+        br 
+        br
+        section 
+        blockquote 
+        h2.d.block.w-100.text-center(style='font-weight: bolder; font-size:2.2rem') HOTELES REGISTRADOS
+            br 
+            br
+            a(href=`/hoteles`, class='btn btn-light', style='margin-right:0') Agregar Hotel
+        .row(style='margin-left:3rem')
+            .col-md.col-lg-4.mv-4
+                br
+                table.table.table-light
+                    thead.table-dark
+                        tr
+                            th #
+                            th Nombre
+                            th DireccionDelHotel     
+                            th Telefono 
+                            th Correo
+                            th 
+                            th 
+                            th 
+                    tbody
+                        each hoteles in hotel3
+                            tr(style="width:10rem")        
+                                td #{hoteles.id_htl}
+                                td #{hoteles.nombre}
+                                td.td #{hoteles.direccion}
+                                td #{hoteles.telefono}
+                                td #{hoteles.correo}
+                                td 
+                                    a(href=`/modificarHoteles?id=${hoteles.id_htl}`, class='btn btn-success btn-clock', width="1rem")
+                                        i.fa.fa-pencil-square-o 
+                                td
+                                    a(href=`/eliminarHoteles?id=${hoteles.id_htl}`, class='btn btn-danger btn-clock')
+                                        i.fa.fa-trash
+                                td 
+                                    a(href=`/listaHab?id=${hoteles.id_htl}`, class='btn btn-info btn-clock')
+                                        i.fa.fa-bed

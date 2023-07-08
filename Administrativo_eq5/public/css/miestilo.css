@@ -1,0 +1,140 @@
+.navegacion {
+    background-color: black;
+}
+
+header .nav a {
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic Medium';
+    font-size: 1.5rem;
+    font-weight: 0;
+    color: white;
+    margin-left: 0px;
+}
+
+.lista-iconos {
+    background-color: rgb(245, 245, 245);
+}
+.lista-iconos img {
+    height: 100px;
+    font-weight: bolder; 
+}
+
+footer{
+    background-color: rgb(249, 249, 249);
+}
+
+.inicio{
+    background-image: url("../img/zacat.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 40rem;
+}
+body{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 22px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(212,212,212,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.body{
+    background: rgba(210,75,90,1);
+    background: -moz-linear-gradient(left, rgba(210,75,90,1) 0%, rgba(247,52,127,1) 3%, rgba(247,19,61,1) 49%, rgba(65,181,67,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(210,75,90,1)), color-stop(3%, rgba(247,52,127,1)), color-stop(49%, rgba(247,19,61,1)), color-stop(100%, rgba(65,181,67,1)));
+    background: -webkit-linear-gradient(left, rgba(210,75,90,1) 0%, rgba(247,52,127,1) 3%, rgba(247,19,61,1) 49%, rgba(65,181,67,1) 100%);
+    background: -o-linear-gradient(left, rgba(210,75,90,1) 0%, rgba(247,52,127,1) 3%, rgba(247,19,61,1) 49%, rgba(65,181,67,1) 100%);
+    background: -ms-linear-gradient(left, rgba(210,75,90,1) 0%, rgba(247,52,127,1) 3%, rgba(247,19,61,1) 49%, rgba(65,181,67,1) 100%);
+    background: linear-gradient(to right, rgba(210,75,90,1) 0%, rgba(247,52,127,1) 3%, rgba(247,19,61,1) 49%, rgba(65,181,67,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d24b5a', endColorstr='#41b543', GradientType=1 );
+}
+
+@font-face{
+    font-family: charter-bold-italic;
+    src: url('../fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: 700;
+}
+
+.inicio h2{
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic Medium';    
+    font-size: 5rem;
+    color:white;
+    padding-left: 3.125rem;
+    padding-top: 25rem;
+}
+
+
+.descripcion h1{
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic Medium';
+    font-size: 3rem;
+    color:white;
+    padding-left: 3.125rem;
+    
+}
+
+.zaca p{
+    font-family: 'Lucida sans';
+    font-size: 1.5rem;
+    padding-left: 6.25rem;
+}
+
+.hoteles h3{
+    font-family: 'Franklin Gothic';
+    color: white;
+    font-size: 3rem;
+}
+
+.hotel{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.hotel img {
+    height: 20%;
+    width: 20%;
+}
+
+.hotel blockquote{
+    padding-left: 5%;
+    font-family: 'Lucida Sans';
+    font-size: 100%;
+    width: 80%;
+    align-items: right;
+}
+
+table {
+  table-layout:auto;
+
+}
+
+th {
+  font-size: 55%;
+
+}
+section th .th{
+  width: 150px;
+}
+
+td{
+  font-size: 55%;
+}
+
+table .table .table{
+  align-self: center;
+}
+
+.inicioAdm{
+    background-image: url("../img/zacat.jpg");
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100% 100%;
+    height: 40rem;
+}

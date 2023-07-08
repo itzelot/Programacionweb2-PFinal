@@ -1,0 +1,35 @@
+extends ./layout/index.pug 
+block compartircontenido 
+    main.container.mt-5
+        .row 
+            .col-md-12.br
+                h2.d.block.w-100.text-center AGREGAR HOTEL 
+                if (errores) 
+                    each error in errores 
+                        .alert.col.alert-danger.text-center=error.mensaje 
+
+            .row.justify-content-center.col 
+                .col-md-8 
+                    form(action = "/hoteles" method="POST")
+                        .form-group 
+                            label(for="id_htl") id 
+                            input#correo(type="test",placeholder="identificador",name="id_htl",class="form-control",value=id_htl,readonly="readonly")
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text",placeholder="Nombre del Hotel",name="nombre",class="form-control",value=nombre)
+                        .form-group 
+                            label(for="direccion") Direccion 
+                            input#direccion(type="text",placeholder="Direccion del Hotel",name="direccion",class="form-control",value=direccion)
+                        .form-group 
+                            label(for="telefono") Telefono 
+                            input#telefono(type="number",placeholder="Telefono del Hotel",name="telefono",class="form-control", minlength="10",value=telefono)
+                        .form-group 
+                            label(for="correo") Correo 
+                            input#correo(type="email",placeholder="Correo del Hotel",name="correo",class="form-control",minlength="8",value=correo)
+                        
+                        input.btn.btn-success.btn-block(type="submit") 
+
+
+                        br
+                        .row.justify-content-center
+                            a(href='/listaHoteles', class='btn btn-info btn-clock',style='font-size:1.5rem') Hoteles registrados

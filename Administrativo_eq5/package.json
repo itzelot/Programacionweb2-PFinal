@@ -1,0 +1,27 @@
+{
+  "name": "examen",
+  "version": "1.0.0",
+  "description": "EXAMEN PARCIAL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "author": "Espinosa Castro Heili Yamilit || Ortiz Tellez Itzel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "nanoid": "^4.0.0",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2",
+    "sequelize": "^6.23.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.8.2",
+    "typescript": "^4.8.4"
+  }
+}

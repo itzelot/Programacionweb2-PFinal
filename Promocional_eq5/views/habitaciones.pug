@@ -1,0 +1,20 @@
+extends ./layout/index.pug 
+block compartircontenido
+    main.container.mt-5
+        section 
+        blockquote 
+        each htl in hot
+            h2.d.block.w-100.text-center(style='font-weight:bold') #{htl.nombre}
+            br 
+            br
+            a(href=`/hoteles`, class='btn btn-warning') Regresar
+            .row
+                each htl in habitacion
+                    .col-md.col-lg-4.mv-4 
+                        br
+                        .card
+                            .card-body.text-left
+                                h4.card-title(style='font-size:1rem') ID HABITACION: #{htl.id_hbt}
+                                h4.card-title(style='font-size:1rem') PISO: #{htl.piso}
+                                h4.card-title(style='font-size:1rem') HABITACION: #{htl.nombre}
+                                h4.card-title(style='font-size:1rem') REFRIGERADOR: #{htl.refrigerador}
